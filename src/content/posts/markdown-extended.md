@@ -16,9 +16,9 @@ draft: false
 
 使用代码 ::github{repo="<owner>/<repo>"} 创建一个 GitHub 仓库卡片。
 
-markdown
+```markdown
 ::github{repo="saicaca/fuwari"}
-
+```
 
 
 ## 提示框（Admonitions）
@@ -47,7 +47,7 @@ markdown
 
 ### 基本语法
 
-markdown
+```markdown
 :::note
 强调用户即使快速浏览也应注意的信息。
 :::
@@ -55,7 +55,7 @@ markdown
 :::tip
 可选的信息，用于帮助用户更好地完成任务。
 :::
-
+```
 
 
 ### 自定义标题
@@ -66,11 +66,11 @@ markdown
 这是一个带有自定义标题的提示框。
 :::
 
-markdown
+```markdown
 :::note[我的自定义标题]
 这是一个带有自定义标题的提示框。
 :::
-
+```
 
 
 ### GitHub 风格语法

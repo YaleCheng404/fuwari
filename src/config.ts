@@ -8,8 +8,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Fuwari",
-	subtitle: "Demo Site",
+	title: "YuYu Blog",
+	subtitle: "Blog Site Powered by Fuwari",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
 		hue: 250, // 主题颜色的默认色相，范围 0~360。例如 红色: 0，青色: 200，蓝绿色: 250，粉色: 345

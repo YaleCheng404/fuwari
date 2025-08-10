@@ -8,33 +8,33 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Fuwari",
-	subtitle: "Demo Site",
-	lang: "en", // Language code, e.g. 'en', 'zh-CN', 'ja', etc.
+	title: "YUYU Blog",
+	subtitle: "Design by Fuwari",
+	lang: "zh-CN", // 语言代码，例如 'en'、'zh-CN'、'ja' 等
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: false, // Hide the theme color picker for visitors
+		hue: 250, // 主题颜色的默认色相，范围 0~360。例如 红色: 0，青色: 200，蓝绿色: 250，粉色: 345
+		fixed: false, // 隐藏主题颜色选择器（让访客无法更改）
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		enable: true,
+		src: "assets/images/75102882_p0.jpg", // 相对于 /src 目录的路径。如果以 '/' 开头，则相对于 /public 目录
+		position: "center", // 相当于 CSS 的 object-position，仅支持 'top'、'center'、'bottom'，默认 'center'
 		credit: {
-			enable: false, // Display the credit text of the banner image
-			text: "", // Credit text to be displayed
-			url: "", // (Optional) URL link to the original artwork or artist's page
+			enable: true, // 是否显示横幅图片的版权/出处文字
+			text: "3 | _LM7_ #pixiv", // 要显示的版权/出处文字
+			url: "https://www.pixiv.net/artworks/75102882", // （可选）指向原作或作者页面的 URL 链接
 		},
 	},
 	toc: {
-		enable: true, // Display the table of contents on the right side of the post
-		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
+		enable: true, // 在文章右侧显示目录
+		depth: 2, // 目录显示的最大标题层级，范围 1~3
 	},
 	favicon: [
-		// Leave this array empty to use the default favicon
+		// 如果此数组为空，则使用默认的 favicon
 		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
+		//   src: '/favicon/icon.png',    // favicon 路径，相对于 /public 目录
+		//   theme: 'light',              // （可选）'light' 或 'dark'，仅当你有浅色/深色两套 favicon 时设置
+		//   sizes: '32x32',              // （可选）favicon 尺寸，仅当你有多种尺寸时设置
 		// }
 	],
 };
@@ -46,22 +46,22 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.About,
 		{
 			name: "GitHub",
-			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
+			url: "https://github.com/YaleCheng404/fuwari", // 内部链接不要包含基础路径（base path），系统会自动添加
+			external: true, // 显示外部链接图标，并在新标签页中打开
 		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	avatar: "assets/images/anno-avatar.jpg", // 相对于 /src 目录的路径。如果以 '/' 开头，则相对于 /public 目录
+	name: "Yale Cheng",
+	bio: "杂食爱好者，喜欢探索新事物",
 	links: [
 		{
 			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
+			icon: "fa6-brands:twitter", // 图标代码可在 https://icones.js.org/ 查询
+			// 如果尚未包含该图标集，需要安装对应的图标集
+			// 命令：`pnpm add @iconify-json/<图标集名称>`
 			url: "https://twitter.com",
 		},
 		{
@@ -72,7 +72,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			url: "https://github.com/YaleCheng404/fuwari",
 		},
 	],
 };
@@ -84,7 +84,7 @@ export const licenseConfig: LicenseConfig = {
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
-	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
-	// Please select a dark theme, as this blog theme currently only supports dark background color
+	// 注意：部分样式（例如背景颜色）在 astro.config.mjs 文件中被覆盖
+	// 请选择深色主题，因为当前博客主题仅支持深色背景
 	theme: "github-dark",
 };

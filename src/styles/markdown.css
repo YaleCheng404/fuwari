@@ -1,121 +1,124 @@
-.custom-md {
-    h1 {
-        @apply text-3xl;
-    }
+/* ------------------------------
+ * Tailwind base setup
+ * ------------------------------ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    h1, h2, h3, h4, h5, h6 {
-        .anchor {
-            @apply transition -m-0.5 ml-[0.2ch] p-0.5 select-none opacity-0 no-underline !important;
+/* ------------------------------
+ * Reusable component classes
+ * ------------------------------ */
+@layer components {
+  /* 通用链接组件：供 @apply link 使用，或直接在 HTML 类名中使用 */
+  .link {
+    @apply underline underline-offset-4 transition-colors
+           text-blue-600 hover:text-blue-700
+           dark:text-blue-400 dark:hover:text-blue-300;
+  }
 
-            .anchor-icon {
-                @apply mx-[0.45ch] !important;
-            }
-        }
+  /* Markdown 页面容器（按你的项目习惯命名：markdown / prose / content 均可） */
+  .markdown {
+    @apply text-base leading-7 text-gray-800 dark:text-gray-200;
+  }
 
-        &:hover {
-            .anchor {
-                @apply opacity-100 !important;
-            }
-        }
-    }
+  /* 标题层级 */
+  .markdown h1 { @apply mt-8 mb-4 text-3xl font-bold tracking-tight; }
+  .markdown h2 { @apply mt-10 mb-4 text-2xl font-semibold tracking-tight; }
+  .markdown h3 { @apply mt-8 mb-3 text-xl font-semibold; }
+  .markdown h4 { @apply mt-6 mb-2 text-lg font-semibold; }
 
-    a:not(.no-styling) {
-        @apply relative bg-none link font-medium text-[var(--primary)]
-        underline decoration-[var(--link-underline)] decoration-1 decoration-dashed underline-offset-4;
-        box-decoration-break: clone;
-        -webkit-box-decoration-break: clone;
-        display: inline-block;
-    
-        &:hover, &:active {
-            @apply decoration-transparent;
-            background: var(--btn-plain-bg-hover);
-            border-bottom: 1px dashed var(--link-hover);
-            text-decoration: none;
-        }
-    }
+  /* 段落与基础块级元素 */
+  .markdown p        { @apply my-4; }
+  .markdown hr       { @apply my-8 border-t border-gray-200 dark:border-gray-700; }
+  .markdown strong   { @apply font-semibold; }
+  .markdown em       { @apply italic; }
+  .markdown del      { @apply line-through; }
 
-    code {
-        @apply bg-[var(--inline-code-bg)] text-[var(--inline-code-color)] px-1 py-0.5 rounded-md overflow-hidden;
+  /* 列表 */
+  .markdown ul       { @apply my-4 ml-6 list-disc; }
+  .markdown ol       { @apply my-4 ml-6 list-decimal; }
+  .markdown li       { @apply my-1; }
+  .markdown li > ul  { @apply mt-1 mb-2 ml-6 list-disc; }
+  .markdown li > ol  { @apply mt-1 mb-2 ml-6 list-decimal; }
 
-        font-family: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-        &:before {
-            content:none;
-        }
-        &:after {
-            content:none;
-        }
+  /* 引用块 */
+  .markdown blockquote {
+    @apply my-6 border-l-4 border-gray-300 pl-4 text-gray-700 dark:text-gray-300 dark:border-gray-600;
+  }
 
-        counter-reset: line;
-        span.line {
-            &:before {
-                @apply text-white/25 mr-4 w-4 inline-block;
-                content: counter(line);
-                counter-increment: line;
-                direction: rtl;
-            }
-            &:last-child:empty, &:last-child:has(> span:empty:only-child) {
-                display: none;
-            }
-        }
-    }
+  /* 代码（行内 + 块） */
+  .markdown code {
+    @apply rounded bg-gray-100 px-1.5 py-0.5 text-[0.95em] font-mono text-gray-900
+           dark:bg-gray-800 dark:text-gray-100;
+  }
 
-    .copy-btn {
-        all: initial;
-        @apply btn-regular-dark opacity-0 shadow-lg shadow-black/50 absolute active:scale-90 h-8 w-8 top-3 right-3 text-sm rounded-lg transition-all ease-in-out z-20 cursor-pointer;
-    }
-    .frame:hover .copy-btn {
-        opacity: 1;
-    }
+  .markdown pre {
+    @apply my-6 overflow-x-auto rounded-lg bg-gray-900 p-4 text-gray-100;
+  }
 
-    .copy-btn-icon {
-        @apply absolute top-1/2 left-1/2 transition -translate-x-1/2 -translate-y-1/2 w-4 h-4 fill-white pointer-events-none;
-    }
-    .copy-btn .copy-icon {
-        @apply opacity-100 fill-white dark:fill-white/75;
-    }
-    .copy-btn.success .copy-icon {
-        @apply opacity-0 fill-[var(--deep-text)]
-    }
-    .copy-btn .success-icon {
-        @apply opacity-0 fill-white;
-    }
-    .copy-btn.success .success-icon {
-        @apply opacity-100
-    }
+  .markdown pre code {
+    @apply bg-transparent p-0 text-[0.95em] text-inherit;
+  }
 
-    .expressive-code {
-        @apply my-4;
-        ::selection {
-            @apply bg-[var(--codeblock-selection)];
-        }
-    }
+  /* 表格 */
+  .markdown table {
+    @apply my-6 w-full table-auto border-collapse overflow-hidden rounded-lg;
+  }
 
+  .markdown thead th {
+    @apply bg-gray-100 px-3 py-2 text-left font-semibold text-gray-800
+           dark:bg-gray-800 dark:text-gray-100;
+  }
 
-    ul, ol {
-        li::marker {
-            @apply text-[var(--primary)];
-        }
-    }
+  .markdown tbody td {
+    @apply border-t border-gray-200 px-3 py-2 align-top
+           dark:border-gray-700;
+  }
 
-    blockquote {
-        @apply not-italic border-transparent relative;
-        font-weight: inherit;
+  .markdown tbody tr:nth-child(even) td {
+    @apply bg-gray-50 dark:bg-gray-900/40;
+  }
 
-        &:before {
-            @apply content-[''] absolute -left-1 block transition bg-[var(--btn-regular-bg)] h-full w-1 rounded-full;
-        }
+  /* 图片 */
+  .markdown img {
+    @apply my-6 max-w-full rounded-lg shadow-sm;
+  }
 
-        /* Remove the double quotes from default styles */
-        p:before, p:after {
-            @apply content-none;
-        }
+  /* 提示/告警块（可选） */
+  .markdown .callout {
+    @apply my-6 rounded-lg border border-gray-200 bg-gray-50 p-4
+           dark:border-gray-700 dark:bg-gray-900/40;
+  }
+  .markdown .callout > .title {
+    @apply mb-2 text-sm font-semibold uppercase tracking-wide text-gray-600 dark:text-gray-300;
+  }
+}
 
-    }
+/* ------------------------------
+ * Utilities-level composition
+ * ------------------------------ */
+@layer utilities {
+  /* 让 markdown 内所有链接默认采用 .link 样式 */
+  .markdown a {
+    @apply link;
+  }
 
-    .katex-display-container {
-        max-width: 100%;
-        overflow-x: auto;
-        margin: 1em 0;
-    }
-    
+  /* 文章卡片或摘要中可选的“幽灵链接”样式（颜色更克制） */
+  .markdown a.muted {
+    @apply underline underline-offset-4 transition-colors
+           text-gray-700 hover:text-gray-900
+           dark:text-gray-300 dark:hover:text-white;
+  }
+}
+
+/* ------------------------------
+ * Optional: 小屏阅读优化
+ * ------------------------------ */
+@media (max-width: 640px) {
+  .markdown {
+    @apply text-[0.98rem] leading-7;
+  }
+  .markdown h1 { @apply text-2xl; }
+  .markdown h2 { @apply text-xl; }
+  .markdown h3 { @apply text-lg; }
 }

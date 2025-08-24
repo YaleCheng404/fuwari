@@ -82,8 +82,8 @@ draft: false
 > 支持 GitHub 风格语法。
 
 > [!TIP]
->支持 GitHub 风格语法。
-```
+> 支持 GitHub 风格语法。
+
 
 ### 折叠内容（Spoiler）
 

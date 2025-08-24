@@ -82,4 +82,16 @@ draft: false
 > 支持 GitHub 风格语法。
 
 > [!TIP]
-> 支持 GitHub 风格语法。
+>支持 GitHub 风格语法。
+```
+
+### 折叠内容（Spoiler）
+
+你可以在文本中添加折叠内容。文本同样支持 **Markdown** 语法。  
+
+内容 :spoiler[已被隐藏 **ayyy**]!
+
+```markdown
+内容 :spoiler[已被隐藏 **ayyy**]!
+
+```

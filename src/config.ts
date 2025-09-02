@@ -68,7 +68,7 @@ export const profileConfig: ProfileConfig = {
 			name: "Twitter",
 			icon: "fa6-brands:google-drive",
 			url: "https://openlist.399439.xyz",
-		}
+		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",

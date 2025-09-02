@@ -8,8 +8,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "YuYu Blog",
-	subtitle: "Blog Site Powered by Fuwari",
+	title: "Codec Blog",
+	subtitle: "Blog Powered by Fuwari",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
 		hue: 250, // 主题颜色的默认色相，范围 0~360。例如 红色: 0，青色: 200，蓝绿色: 250，粉色: 345
@@ -21,7 +21,7 @@ export const siteConfig: SiteConfig = {
 		position: "center", // 相当于 CSS 的 object-position，仅支持 'top'、'center'、'bottom'，默认 'center'
 		credit: {
 			enable: true, // 是否显示横幅图片的版权/出处文字
-			text: "3 | _LM7_ #pixiv", // 要显示的版权/出处文字
+			text: "3 | _LM7_", // 要显示的版权/出处文字
 			url: "https://www.pixiv.net/artworks/75102882", // （可选）指向原作或作者页面的 URL 链接
 		},
 	},
@@ -58,21 +58,21 @@ export const profileConfig: ProfileConfig = {
 	bio: "杂食爱好者，喜欢探索新事物",
 	links: [
 		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // 图标代码可在 https://icones.js.org/ 查询
+			name: "Bitcoin",
+			icon: "fa6-brands:bitcoin", // 图标代码可在 https://icones.js.org/ 查询
 			// 如果尚未包含该图标集，需要安装对应的图标集
 			// 命令：`pnpm add @iconify-json/<图标集名称>`
-			url: "https://twitter.com",
+			url: "https://bitcoin.org",
 		},
 		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
+			name: "Twitter",
+			icon: "fa6-brands:google-drive",
+			url: "https://openlist.399439.xyz",
+		}
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/YaleCheng404/fuwari",
+			url: "https://github.com/YaleCheng404",
 		},
 	],
 };

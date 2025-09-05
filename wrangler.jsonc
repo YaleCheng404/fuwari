@@ -3,7 +3,7 @@
 	"name": "fuwari",
 	"main": "./dist/_worker.js/index.js",
 	// 更新为今天的日期
-	"compatibility_date": "2025-08-24",
+	"compatibility_date": "2025-09-05",
 	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
 		"binding": "ASSETS",
